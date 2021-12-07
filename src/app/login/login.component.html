@@ -1,0 +1,9 @@
+<form [formGroup]="formLogin" (ngSubmit)="iniciarSesion()">
+  <section class="form-login">
+    <h5>Formulario Login</h5>
+    <input formControlName="Email" class="form-control controls"type="text"placeholder="Usuario"/>
+    <input formControlName="Clave" class="form-control controls" type="password" name="contrasena"placeholder="Contraseña"/>
+    <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
+    <p><a href="#">¿Olvidastes tu Contraseña?</a></p>
+  </section>
+</form>

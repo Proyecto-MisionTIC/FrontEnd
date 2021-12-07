@@ -1,0 +1,50 @@
+<div class="col-md-12 mx-auto">
+    <form [formGroup]="formRegistro" (ngSubmit)="registrarEmpleado()">
+      <section class="form-register">
+        <h4>Formulario Registro</h4>
+        <div class="row">
+
+          <div class="col-md-6 form-group">
+            <input formControlName="nombre" class="form-control controls"  type="text" autofocus  placeholder="Ingrese su Nombre">
+          </div>
+          
+          <div class="col-md-6 form-group">
+            <input formControlName="apellido" class="form-control controls" type="text"  placeholder="Ingrese su Apellido">
+          </div>
+          
+          <div class="col-md-6 form-gro">
+            <input formControlName="telefono" class="form control controls" type="text" placeholder="Ingrese su telefono">
+          </div>
+          
+          <div class="col-md-6">
+            <input formControlName="direccion" class="form-control controls" type="text"  placeholder="Ingrese su direccion">
+          </div>
+          
+          <div class="col-md-6">  
+            <input formControlName="correo" class="form-control controls" type="email" placeholder="Ingrese su Correo">
+          </div>
+          <div class="col-md-6" >
+
+            <input formControlName="contraseña" class="controls" type="password"  placeholder="Ingrese su Contraseña">
+          </div>
+          
+          <div class="col-md-6">
+            <input formControlName="edad" class="form-control controls" type="text" placeholder="Ingrese su Edad">
+          </div>
+          <div class="col-md-6">
+            <input formControlName="fecha" type="date" class="form-control controls">
+          </div>
+
+          <div class="col-md-6">
+            <input formControlName="sueldo" type="number" class="form-control controls" placeholder="Ingrese su sueldo">
+          </div>
+        </div>
+        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+        <p>
+          <a href="/login">¿Ya tengo Cuenta?</a>
+        </p>
+      </section>
+      </form>
+</div>
+
