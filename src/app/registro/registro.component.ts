@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,Validators} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { ModeloEmpleado } from '../models/Empleados.modelo';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -11,8 +15,11 @@ export class RegistroComponent implements OnInit {
   formRegistro : FormGroup
   constructor(
     private fb : FormBuilder,
-    private auth : AuthService
-  ) { 
+    private auth : AuthService,
+    private toastr: ToastrService,
+    private router: Router
+    ) 
+  { 
     this.formRegistro = fb.group({
 
       nombre : ['',Validators.required],
@@ -33,8 +40,8 @@ export class RegistroComponent implements OnInit {
 
   registrarEmpleado(){
 
-    const Empleado = {
-
+    const Empleado : ModeloEmpleado = {
+      
       Nombres : this.formRegistro.get('nombre')?.value,
       Apellidos : this.formRegistro.get('apellido')?.value,
       Telefono : this.formRegistro.get('telefono')?.value,
@@ -46,10 +53,21 @@ export class RegistroComponent implements OnInit {
       Sueldo : this.formRegistro.get('sueldo')?.value,
       esDirectivo: 0,
       esCliente : 0,
-      empresId : '619007c23f23321a7cd9d409',
+      empresaId : '619007c23f23321a7cd9d409',
     } 
-    console.log(Empleado)
+
     this.auth.registrar(Empleado)
+    .subscribe({
+      next: () =>{
+        this.toastr.success("Registro Exitoso")
+        this.router.navigate(['login'])
+      },
+      error: (error) =>{
+
+        this.toastr.info("El Usuario Ya se encuentra registrado")
+        this.formRegistro.reset()
+      }
+    })
   }
 
 }
