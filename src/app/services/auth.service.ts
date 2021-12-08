@@ -16,7 +16,10 @@ export class AuthService {
     private router : Router
   ) { }
 
+    obtenerEmpleados() : Observable<ModeloEmpleado[]>{
+      return this.http.get<ModeloEmpleado[]>(`${this.URL}/empleados`)
 
+    }
  
     registrar(empleado : ModeloEmpleado): Observable<ModeloEmpleado>{
       console.log(empleado)

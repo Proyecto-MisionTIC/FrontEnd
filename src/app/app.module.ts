@@ -9,14 +9,16 @@ import {ToastrModule} from 'ngx-toastr'
 import { RegistroComponent } from './registro/registro.component';
 import { ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { EmpleadosComponent } from './empleados/empleados.component'
 ReactiveFormsModule;
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    EmpleadosComponent
   ],
   imports: [
     BrowserModule,

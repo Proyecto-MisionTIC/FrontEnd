@@ -1,0 +1,40 @@
+<div class="container">
+    
+<div class="col-md-12 mx-auto">
+    <div class="card">
+        <div class="card-body">
+         <table class="table">
+             <thead>
+               <tr>
+                 <th scope="col">Nombres</th>
+                 <th scope="col">Apellidos</th>
+                 <th scope="col">Telefono</th>
+                 <th scope="col">Direccion</th>
+                 <th scope="col">Email</th>
+                 <th scope="col">Edad</th>
+                 <th scope="col">Fecha Nacimiento</th>
+                 <th scope="col">Sueldo</th>
+                </tr>
+
+             </thead>
+             <tbody>
+               <tr *ngFor="let p of listaEmpleados">
+                 <td>{{p.Nombres}}</td>
+                 <td>{{p.Apellidos}}</td>
+                 <td>{{p.Telefono}}</td>
+                 <td>{{p.Direccion}}</td>
+                 <td>{{p.Email}}</td>
+                 <td>{{p.Edad}}</td>
+                 <td>{{p.fechaNacimiento}}</td>
+                 <td>{{p.Sueldo}}</td>
+
+
+
+                 
+               </tr>
+             </tbody>
+           </table>
+        </div>
+    </div>
+ </div>
+</div>
